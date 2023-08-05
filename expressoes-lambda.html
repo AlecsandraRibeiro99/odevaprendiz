@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.aprendiz - Expressões Lambda em .NET 6</title>
+  <!-- Adicione os links para as fontes Montserrat e Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <!-- Adicione o link para o Bootstrap CSS -->
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <div class="logo_container">
+        <a  title="dev.aprendiz" href="/index.html"></a>
+        <img src="/images/oaprendizdev-logo.png" alt="logo-dev.aprendiz">
+      </div>
+      <a href="/index.html" title="Blog" style="color: #000000; font-size: 22px; font-weight: bold;">Blog</a>
+      <a href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/" target="_blank">
+        <img src="/images/logo-linkedin.png" alt="LinkedIn logo" width="30" height="30">
+      </a>
+    </div>
+  </nav>
+
+  <div class="ua-page-hero"
+    style="background-image: linear-gradient(rgb(65, 71, 73), #262626); padding-top: 30px; padding-bottom: 50px; --darkreader-inline-bgimage: linear-gradient(#713c7d, #55375d);">
+    <div class="container">
+      <br>
+      <h1 class="formacoes-header-titulo titulo-post color=" #f57c00">
+        Expressões Lambda em .NET 6: Simplificando o Desenvolvimento de Software
+      </h1>
+      <div class="row">
+        <div class="col-lg-1 col-md-2 col-sm-2">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <img class="img-fluid avatar-autor rounded-circle img-thumbnail" style="padding: 0.10rem"
+            src="/images/foto-perfil-claudio.png" title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            alt="Claudio Marcelo Ribeiro">
+        </div>
+        <div class="col-md-10 col-sm-10" style="padding-top: 15px">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <h6 color="#fff">Claudio Marcelo Ribeiro</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="courses">
+    <div class="container">
+      <p class=".p-artigo">Bem-vindo ao blog dev.aprendiz! Neste artigo, vamos explorar o poder e a importância das
+        expressões lambda no contexto do desenvolvimento de software em .NET 6. As expressões lambda são recursos
+        incrivelmente úteis que permitem escrever códigos mais concisos e legíveis, tornando a programação em C# ainda
+        mais eficiente e produtiva.</p>
+
+      <h2 color="#f57c00">O que são Expressões Lambda?</h2>
+      <p>Em termos simples, uma expressão lambda é uma função anônima que pode ser tratada como um objeto. Elas permitem
+        escrever blocos de código de forma compacta e podem ser usadas em contextos onde delegados são necessários. Na
+        prática, as expressões lambda são frequentemente usadas em consultas LINQ, delegates, eventos, entre outros.</p>
+
+      <h2 color="#f57c00">Vantagens das Expressões Lambda</h2>
+      <p>As expressões lambda oferecem diversas vantagens que tornam o desenvolvimento de software mais eficiente e
+        elegante:</p>
+      <ul>
+        <li><strong>1. Código mais conciso:</strong> Como podemos observar nos exemplos abaixo, o uso de expressões
+          lambda permite reduzir a quantidade de código necessário, tornando-o mais claro e objetivo.</li>
+        <li><strong>2. Legibilidade aprimorada:</strong> A sintaxe das expressões lambda é mais sucinta, facilitando a
+          leitura e compreensão do código por parte dos desenvolvedores.</li>
+        <li><strong>3. Produtividade do desenvolvedor:</strong> Com menos linhas de código para escrever e manter, os
+          desenvolvedores podem ser mais produtivos e concentrar-se nas tarefas essenciais.</li>
+        <li><strong>4. Facilidade de manutenção:</strong> Códigos mais curtos e legíveis são mais fáceis de entender e
+          manter ao longo do tempo, especialmente em projetos complexos.</li>
+        <li><strong>5. Expressividade:</strong> As expressões lambda permitem expressar de forma clara a intenção do
+          código, tornando-o mais expressivo e próximo da linguagem natural.</li>
+      </ul>
+
+      <h2 color="#f57c00">Exemplo de código no modo tradicional</h2>
+      <br>
+      <img class="cod-csharp" src="/images/ex-tradic-lambda.png" alt="">
+      <br>
+      <br>
+      <h2 color="#f57c00">Exemplo de código usando Expressões Lambda em .NET 6</h2>
+      <img class="cod-csharp-lambda" src="/images/ex-usando-lambda.png" alt="">
+      <br>
+      <br>
+      <p>No exemplo acima, podemos ver como as expressões lambda simplificam o processo de filtragem dos números pares e
+        ímpares da lista. Em vez de utilizar dois loops foreach, podemos aproveitar os métodos de extensão do LINQ e
+        expressões lambda para obter o mesmo resultado de forma mais eficiente e clara.</p>
+
+      <h2 color="#f57c00">Conclusão</h2>
+      <p>As expressões lambda são um recurso poderoso e elegante oferecido pelo .NET 6, que simplifica e aprimora a
+        programação em C#. Elas nos permitem escrever códigos mais curtos, legíveis e expressivos, ao mesmo tempo que
+        aumentam a produtividade do desenvolvedor e facilitam a manutenção do código.</p>
+
+      <p>Se você deseja elevar a qualidade de suas aplicações .NET 6 e se tornar um programador mais eficiente, não
+        deixe de explorar as vantagens das expressões lambda em suas implementações. Compreender e dominar essa
+        funcionalidade valiosa certamente será um diferencial em sua carreira.</p>
+
+      <p>Esperamos que este artigo tenha sido útil para você. Até a próxima!</p>
+
+    </div>
+  </div>
+
+  <button id="top" style="position: absolute; right: 0;">
+    <img src="/images/up-arrow.png" alt="Voltar ao topo">
+  </button>
+
+  <footer class="bg-dark text-white py-3 text-center">
+    <p>Todos os direitos reservados &copy; 2023</p>
+  </footer>
+
+  <!-- Adicione o link para o Bootstrap JS e jQuery (opcional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Adicione o evento de clique ao botão
+    document.getElementById("top").addEventListener("click", function () {
+      // Role para o topo da página
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+body {
+    font-family: "Montserrat", Arial, sans-serif;
+    /* Fonte Montserrat como primeira opção */
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+    /* Cor de Fundo Principal: Preto escuro */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+  }
+
+/* Estilos para o header */
+header {
+    text-align: center;
+    background-color: #007bff;
+    /* Cor Primária: Azul brilhante */
+    color: #fff;
+    padding: 30px;
+}
+
+/* Estilos para o título principal */
+h1 {
+    font-family: "Roboto", sans-serif;
+    /* Fonte Roboto para títulos */
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #E6E6FA;
+}
+
+/* Estilos para o subtítulo */
+p {
+    font-family: "Montserrat", Arial, sans-serif;
+    /* Fonte Montserrat para texto */
+    font-size: 18px;
+    color: #E6E6FA;
+}
+
+ul {
+    font-family: "Montserrat", Arial, sans-serif;
+    /* Fonte Montserrat para texto */
+    font-size: 18px;
+    color: #E6E6FA;
+}
+
+/* Estilos para os cards de postagens */
+.post h2 {
+    font-family: "Roboto", sans-serif;
+    /* Fonte Roboto para títulos de postagens */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-family: "Montserrat", Arial, sans-serif;
+    /* Fonte Montserrat para texto de postagens */
+    font-size: 16px;
+}
+
+/* Estilos para os botões de leia mais */
+.post a.btn {
+    font-family: "Roboto", sans-serif;
+    /* Fonte Roboto para botões */
+    margin-top: 10px;
+    background-color: #ff9800;
+    /* Cor Secundária: Laranja */
+    color: #fff;
+    /* Cor do Texto: Branco */
+}
+
+.post a.btn:hover {
+    background-color: #f57c00;
+    /* Cor de Destaque Escura (Hover): Laranja escuro */
+}
+
+/* ... Resto do CSS ... */
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  background-color: #343a40;
+  color: #fff;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-size: 0.90rem;
+}
+
+.courses {
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 550px;
+}
+
+.container {
+    color: rgb(81, 87, 91);
+}
+
+.img-instrutor-circle {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.course_teacher {
+    color: rgb(220, 218, 215);
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+a {
+  color: #202933;  
+}
+
+.p-artigo {
+    color: #fff !important; 
+}
+
+.logo_texto {
+    font-size: 24px;
+    color: #fff;
+}
+
+.formacoes-header-titulo {
+    font-weight: 600;
+    letter-spacing: .5px;
+    font-size: 50px;
+    line-height: 1.36;
+    text-align: center;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.titulo-post {
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.avatar-autor {
+    max-width: 75px;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+.img-thumbnail {
+    padding: 0.10rem;
+    background-color: #fff;
+    border: 0.20px solid #ddd;
+    border-radius: 0.15rem;
+    transition: all .2s ease-in-out;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.cod-csharp {
+    height: 323px;
+    width: 516px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.cod-csharp-lambda {
+    height: 150px;
+    width: 616px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+button#top {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  button#top:hover {
+    transform: translateY(-5px);
+  }
