@@ -18,7 +18,7 @@
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
       <div class="logo_container">
-        <a  title="dev.aprendiz" href="/index.html"></a>
+        <a title="dev.aprendiz" href="/index.html"></a>
         <img src="/images/oaprendizdev-logo.png" alt="logo-dev.aprendiz">
       </div>
       <a href="/index.html" title="Blog" style="color: #000000; font-size: 22px; font-weight: bold;">Blog</a>
@@ -81,11 +81,43 @@
 
       <h2 color="#f57c00">Exemplo de código no modo tradicional</h2>
       <br>
-      <img class="cod-csharp" src="/images/ex-tradic-lambda.png" alt="">
+      <pre><code class="dracula-theme">
+        <span class="keyword">List</span>&lt;<span class="dataType">int</span>&gt; <span class="variable">numbers</span> = <span class="keyword">new</span> <span class="constructor">List</span>&lt;<span class="dataType">int</span>&gt; { <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span> };
+        
+        <span class="comment">// Imprime os números pares.</span>
+        <span class="keyword">foreach</span> (<span class="dataType">int</span> <span class="variable">number</span> <span class="keyword">in</span> <span class="variable">numbers</span>)
+        {
+            <span class="keyword">if</span> (<span class="variable">number</span> % <span class="number">2</span> == <span class="number">0</span>)
+            {
+                <span class="constructor">Console</span>.<span class="method">WriteLine</span>(<span class="variable">number</span>);
+            }
+        }
+        
+        <span class="comment">// Imprime os números ímpares.</span>
+        <span class="keyword">foreach</span> (<span class="dataType">int</span> <span class="variable">number</span> <span class="keyword">in</span> <span class="variable">numbers</span>)
+        {
+            <span class="keyword">if</span> (<span class="variable">number</span> % <span class="number">2</span> != <span class="number">0</span>)
+            {
+                <span class="constructor">Console</span>.<span class="method">WriteLine</span>(<span class="variable">number</span>);
+            }
+        }
+        </code></pre>
       <br>
       <br>
       <h2 color="#f57c00">Exemplo de código usando Expressões Lambda em .NET 6</h2>
-      <img class="cod-csharp-lambda" src="/images/ex-usando-lambda.png" alt="">
+      
+      <pre><code class="dracula-theme">
+        <span class="keyword">List&lt;int&gt;</span> <span class="variable">numbers</span> = <span class="constructor">new</span> <span class="constructor">List&lt;int&gt;</span> { <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span> };
+        
+        <span class="comment">// Imprime os números pares.</span>
+        <span class="variable">numbers</span>.<span class="method">Where</span>((<span class="variable">x</span>) =&gt; <span class="variable">x</span> % <span class="number">2</span> == <span class="number">0</span>)
+               .<span class="method">ForEach</span>(<span class="constructor">Console</span>.<span class="method">WriteLine</span>);
+        
+        <span class="comment">// Imprime os números ímpares.</span>
+        <span class="variable">numbers</span>.<span class="method">Where</span>((<span class="variable">x</span>) =&gt; <span class="variable">x</span> % <span class="number">2</span> != <span class="number">0</span>)
+               .<span class="method">ForEach</span>(<span class="constructor">Console</span>.<span class="method">WriteLine</span>);
+        </code></pre>
+
       <br>
       <br>
       <p>No exemplo acima, podemos ver como as expressões lambda simplificam o processo de filtragem dos números pares e

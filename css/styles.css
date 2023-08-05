@@ -12,7 +12,7 @@ body {
     top: 0;
     width: 100%;
     background-color: #000;
-  }
+}
 
 /* Estilos para o header */
 header {
@@ -79,16 +79,16 @@ ul {
 
 /* ... Resto do CSS ... */
 .card-body {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding: 1.25rem;
-  background-color: #343a40;
-  color: #fff;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    background-color: #343a40;
+    color: #fff;
 }
 
 .card-title {
-  margin-bottom: 0.75rem;
-  font-size: 0.90rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.90rem;
 }
 
 .courses {
@@ -128,12 +128,13 @@ ul {
     border-top-left-radius: calc(0.25rem - 1px);
     border-top-right-radius: calc(0.25rem - 1px);
 }
+
 a {
-  color: #202933;  
+    color: #202933;
 }
 
 .p-artigo {
-    color: #fff !important; 
+    color: #fff !important;
 }
 
 .logo_texto {
@@ -160,7 +161,7 @@ a {
 }
 
 .rounded-circle {
-    border-radius: 50%!important;
+    border-radius: 50% !important;
 }
 
 .img-thumbnail {
@@ -194,8 +195,78 @@ a {
 
 button#top {
     transition: all 0.5s ease-in-out;
-  }
-  
-  button#top:hover {
+}
+
+button#top:hover {
     transform: translateY(-5px);
-  }
+}
+
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+code {
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+code {
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+code {
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+}
+
+.dracula-theme {
+    background-color: #282a36;
+    color: #f8f8f2;
+}
+
+.keyword {
+    color: #f1fa8c; /* Yellow */
+}
+
+.dataType {
+    color: #ff79c6; /* Pink */
+}
+
+.variable {
+    color: #ff5555; /* Red */
+}
+
+.number {
+    color: #ffb86c; /* Orange */
+}
+
+.constructor {
+    color: #f1fa8c; /* Yellow */
+}
+
+.method {
+    color: #50fa7b; /* Green */
+}
+
+.comment {
+    color: #6272a4; /* Blue */
+}
