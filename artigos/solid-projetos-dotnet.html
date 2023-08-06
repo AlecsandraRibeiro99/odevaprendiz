@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.aprendiz - SOLID em Projetos .NET</title>
+  <!-- Adicione os links para as fontes Montserrat e Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <!-- Adicione o link para o Bootstrap CSS -->
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <div class="logo_container">
+        <a title="dev.aprendiz" href="/index.html"></a>
+        <img src="/images/oaprendizdev-logo.png" alt="logo-dev.aprendiz">
+      </div>
+      <a href="/index.html" title="Blog" style="color: #000000; font-size: 22px; font-weight: bold;">Blog</a>
+      <a href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/" target="_blank">
+        <img src="/images/logo-linkedin.png" alt="LinkedIn logo" width="30" height="30">
+      </a>
+    </div>
+  </nav>
+
+  <div class="ua-page-hero"
+    style="background-image: linear-gradient(rgb(65, 71, 73), #262626); padding-top: 30px; padding-bottom: 50px; --darkreader-inline-bgimage: linear-gradient(#713c7d, #55375d);">
+    <div class="container">
+      <br>
+      <h1 class="formacoes-header-titulo titulo-post color=" #f57c00">
+        SOLID em Projetos .NET: Fundamentos e Melhores Práticas
+      </h1>
+      <div class="row">
+        <div class="col-lg-1 col-md-2 col-sm-2">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <img class="img-fluid avatar-autor rounded-circle img-thumbnail" style="padding: 0.10rem"
+            src="/images/foto-perfil-claudio.png" title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            alt="Claudio Marcelo Ribeiro">
+        </div>
+        <div class="col-md-10 col-sm-10" style="padding-top: 15px">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <h6 color="#fff">Claudio Marcelo Ribeiro</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteúdo do artigo sobre SOLID em Projetos .NET -->
+  <section class="container mt-5">
+    <!-- (continuação do artigo) -->
+
+    <p>
+      Olá, devs! Hoje vamos mergulhar em um dos conceitos fundamentais da programação orientada a objetos: SOLID. Se
+      você é
+      um aprendiz em busca de aprimorar suas habilidades em projetos .NET, entender os princípios SOLID é um passo
+      importante para criar código de qualidade, de fácil manutenção e extensível.
+    </p>
+
+    <h2>O que é SOLID?</h2>
+    <p>
+      SOLID é um acrônimo criado por Robert C. Martin, que representa cinco princípios que guiam a escrita de software
+      orientado a objetos. Esses princípios visam tornar o código mais legível, flexível e fácil de entender e evoluir.
+      Vamos dar uma olhada em cada um deles:
+    </p>
+
+    <h3>1. Responsabilidade Única (SRP)</h3>
+    <p>
+      O princípio da Responsabilidade Única (SRP) é o primeiro dos cinco princípios SOLID. Ele enfatiza que uma classe
+      deve ter apenas uma única responsabilidade no sistema. Em outras palavras, uma classe deve ter um único motivo
+      para mudar. Ao seguir esse princípio, evitamos classes "inchadas" que tentam fazer muitas coisas diferentes, o que
+      pode levar a um código difícil de entender, manter e modificar.
+    </p>
+    <p>
+      Uma classe com uma única responsabilidade é mais coesa e fácil de testar. Isso também facilita a reutilização de
+      código, pois a classe estará focada em um propósito específico.
+    </p>
+
+    <h5>Exemplo de código:</h5>
+    <p>
+      Vamos criar um exemplo simples onde temos uma classe chamada EmailSender, que tem a responsabilidade única de
+      enviar e-mails. Outras tarefas, como formatação de texto, não devem ser misturadas nessa classe.
+    </p>
+
+    <pre><code class="dracula-theme-solid">
+      using System;
+      
+      <span class="comment">// Classe com a responsabilidade única de enviar e-mails</span>
+      <span class="class">public class</span> EmailSender
+      {
+          <span class="comment">// Método para enviar um e-mail</span>
+          <span class="method">public void</span> SendEmail(string recipient, string subject, string body)
+          {
+              <span class="comment">// Lógica para enviar o e-mail (apenas simulação neste exemplo)</span>
+              <span class="variable">Console.WriteLine</span>(<span class="string">$"Enviando e-mail para: {recipient}"</span>);
+              <span class="variable">Console.WriteLine</span>(<span class="string">$"Assunto: {subject}"</span>);
+              <span class="variable">Console.WriteLine</span>(<span class="string">$"Corpo do e-mail:\n{body}"</span>);
+          }
+      }
+      
+      <span class="comment">// Exemplo de uso da classe EmailSender</span>
+      <span class="class">public class</span> Program
+      {
+          <span class="method">public static void</span> Main()
+          {
+              <span class="comment">// Instanciando a classe EmailSender</span>
+              EmailSender emailSender = <span class="keyword">new</span> EmailSender();
+      
+              <span class="comment">// Exemplo de envio de e-mail</span>
+              string recipient = <span class="string">"usuario@example.com"</span>;
+              string subject = <span class="string">"Exemplo de e-mail"</span>;
+              string body = <span class="string">"Olá, esta é uma mensagem de exemplo!"</span>;
+              emailSender.SendEmail(recipient, subject, body);
+          }
+      }
+    </code></pre>
+
+    <h3>2. Aberto/Fechado (OCP)</h3>
+    <p>
+      O Princípio do Aberto/Fechado (Open/Closed Principle - OCP) é o segundo dos cinco princípios SOLID. Ele estabelece
+      que uma classe deve estar aberta para extensão, mas fechada para modificação. Em outras palavras, o comportamento
+      de uma classe deve ser facilmente estendido através da adição de novos recursos ou comportamentos sem a
+      necessidade de alterar o código já existente.
+    </p>
+
+    <p>
+      Esse princípio promove a estabilidade do código existente, pois evita modificações que poderiam introduzir bugs ou
+      efeitos colaterais indesejados em outras partes do sistema. Ao seguir o OCP, podemos adicionar novas
+      funcionalidades ao nosso código sem afetar o que já está funcionando, tornando o software mais flexível e menos
+      propenso a erros.
+    </p>
+
+    <h5>Exemplo de código:</h5>
+
+    <p>
+      Vamos utilizar um exemplo de uma classe ShapeAreaCalculator que calcula a área de diferentes formas geométricas
+      (círculos e retângulos). A classe deve ser aberta para extensão para que possamos adicionar novas formas
+      geométricas no futuro sem modificar o código existente.
+    </p>
+
+    <pre><code class="dracula-theme">
+      <span class="class">using</span> System;
+      
+      <span class="comment">// Classe abstrata para cálculo de área de formas geométricas</span>
+      <span class="method">public abstract class</span> Shape
+      {
+          <span class="method">public abstract double</span> CalculateArea();
+      }
+      
+      <span class="comment">// Classe para cálculo de área de círculos</span>
+      <span class="class">public class</span> Circle : Shape
+      {
+          <span class="method">public double</span> Radius { <span class="class">get;</span> }
+      
+          <span class="method">public</span> Circle(<span class="class">double</span> radius)
+          {
+              Radius = radius;
+          }
+      
+          <span class="method">public override double</span> CalculateArea()
+          {
+              <span class="class">return</span> Math.PI * Math.Pow(Radius, 2);
+          }
+      }
+      
+      <span class="comment">// Classe para cálculo de área de retângulos</span>
+      <span class="method">public class</span> Rectangle : Shape
+      {
+          <span class="class">public double</span> Width { <span class="class">get;</span> }
+          <span class="class">public double</span> Height { <span class="class">get;</span> }
+      
+          <span class="class">public</span> Rectangle(<span class="class">double</span> width, <span class="class">double</span> height)
+          {
+              Width = width;
+              Height = height;
+          }
+      
+          <span class="method">public override double</span> CalculateArea()
+          {
+              <span class="class">return</span> Width * Height;
+          }
+      }
+      
+      <span class="comment">// Classe responsável por realizar os cálculos de área</span>
+      <span class="method">public class</span> ShapeAreaCalculator
+      {
+          <span class="class">public double</span> CalculateTotalArea(Shape[] shapes)
+          {
+              <span class="class">double</span> totalArea = 0;
+              <span class="class">foreach</span> (<span class="class">var</span> shape <span class="class">in</span> shapes)
+              {
+                  totalArea += shape.CalculateArea();
+              }
+              <span class="class">return</span> totalArea;
+          }
+      }
+      
+      <span class="comment">// Exemplo de uso</span>
+      <span class="method">public class</span> Program
+      {
+          <span class="class">public static void</span> Main()
+          {
+              Shape[] shapes = {
+                  <span class="class">new</span> Circle(5),
+                  <span class="class">new</span> Rectangle(3, 4)
+              };
+      
+              ShapeAreaCalculator calculator = <span class="class">new</span> ShapeAreaCalculator();
+              <span class="class">double</span> totalArea = calculator.CalculateTotalArea(shapes);
+      
+              <span class="variable">Console.WriteLine</span>(<span class="string">$"Área total das formas geométricas: {totalArea}"</span>);
+          }
+      }
+          </code></pre>
+    <br>
+    <h3>3. Substituição de Liskov (LSP)</h3>
+    <p>
+      O Princípio da Substituição de Liskov (Liskov Substitution Principle - LSP) é o terceiro dos cinco princípios
+      SOLID. Esse princípio foi formulado por Barbara Liskov e estabelece que um objeto de uma classe derivada deve
+      poder ser substituído por um objeto da classe base sem afetar a corretude do programa.
+    </p>
+    <p>
+      Em termos simples, isso significa que uma classe derivada deve ser capaz de substituir uma classe base em qualquer
+      situação em que a classe base é utilizada, sem causar comportamentos inesperados ou resultados incorretos. Se uma
+      classe derivada não pode ser substituída de forma transparente pela classe base, isso indica uma violação do
+      Princípio da Substituição de Liskov.
+    </p>
+
+    <pre><code class="dracula-theme">
+      <span class="class">using</span> System;
+      <span class="comment">// Classe abstrata para cálculo de área de formas geométricas</span>
+      <span class="method">public abstract class</span> Shape
+      {
+          <span class="method">public abstract double</span> CalculateArea();
+      }
+      
+      <span class="comment">// Classe para cálculo de área de círculos</span>
+      <span class="class">public class</span> Circle : Shape
+      {
+          <span class="method">public double</span> Radius { <span class="class">get;</span> }
+
+          <span class="method">public</span> Circle(<span class="class">double</span> radius)
+          {
+              Radius = radius;
+          }
+
+          <span class="method">public override double</span> CalculateArea()
+          {
+              <span class="class">return</span> Math.PI * Math.Pow(Radius, 2);
+          }
+      }
+      
+      <span class="comment">// Classe para cálculo de área de retângulos</span>
+      <span class="method">public class</span> Rectangle : Shape
+      {
+          <span class="class">public double</span> Width { <span class="class">get;</span> }
+          <span class="class">public double</span> Height { <span class="class">get;</span> }
+
+          <span class="method">public</span> Rectangle(<span class="class">double</span> width, <span class="class">double</span> height)
+          {
+              Width = width;
+              Height = height;
+          }
+
+          <span class="method">public override double</span> CalculateArea()
+          {
+              <span class="class">return</span> Width * Height;
+          }
+      }
+
+      <span class="comment">// Classe responsável por realizar os cálculos de área</span>
+      <span class="method">public class</span> ShapeAreaCalculator
+      {
+          <span class="method">public double</span> CalculateTotalArea(Shape[] shapes)
+          {
+              <span class="class">double</span> totalArea = 0;
+              <span class="class">foreach</span> (<span class="class">var</span> shape <span class="class">in</span> shapes)
+          
+              totalArea += shape.CalculateArea();
+          }
+          <span class="class">return</span> totalArea;
+      }
+
+      <span class="comment">// Exemplo de uso</span>
+      <span class="method">public class</span> Program
+      {
+          <span class="method">public static void</span> Main()
+          {
+              Shape[] shapes = {
+                  <span class="class">new</span> Circle(5),
+                  <span class="class">new</span> Rectangle(3, 4)
+              };
+
+              ShapeAreaCalculator calculator = <span class="class">new</span> ShapeAreaCalculator();
+              <span class="class">double</span> totalArea = calculator.CalculateTotalArea(shapes);
+
+              <span class="variable">Console.WriteLine</span>(<span class="string">$"Área total das formas geométricas: {totalArea}"</span>);
+          }
+    }
+    </code></pre>
+    <br>
+    <h3>4. Segregação de Interfaces (ISP)</h3>
+    <p>
+      O Princípio da Segregação de Interfaces (ISP) é o quarto princípio do SOLID. Esse princípio sugere que uma classe
+      não deve ser forçada a implementar interfaces que ela não usa. Em outras palavras, é melhor ter várias interfaces
+      específicas do que uma única interface grande e genérica.
+    </p>
+    <p>O ISP visa evitar que uma classe tenha responsabilidades demais e dependências desnecessárias. Ao dividir as
+      interfaces em partes menores e mais coesas, você torna a implementação de interfaces mais flexível e modular,
+      permitindo que as classes escolham quais interfaces são relevantes para suas funcionalidades.</p>
+
+    <h5>Exemplo de código:</h5>
+    <pre>
+      <code class="dracula-theme">
+      <span class="comment">// Interface para funcionalidades de impressão</span>
+      <span class="interface">public interface</span> IPrinter
+      {
+        <span class="method">void Print</span>(string document);
+      }
+
+      <span class="comment">// Interface para funcionalidades de digitalização</span>
+      <span class="interface">public interface</span> IScanner
+      {
+        <span class="method">void</span> Scan(string document);
+      }
+
+      <span class="comment">// Classe que representa uma impressora</span>
+      <span class="class">public class</span> Printer : IPrinter
+      {
+        <span class="method">public void</span> Print(string document)
+        {
+            <span class="variable">Console.WriteLine</span>($"Imprimindo documento: {document}");
+        }
+      }
+
+      <span class="comment">// Classe que representa um scanner</span>
+      <span class="class">public class</span> Scanner : IScanner
+      {
+        <span class="method">public void</span> Scan(string document)
+        {
+            <span class="variable">Console.WriteLine</span>($"Digitalizando documento: {document}");
+        }
+      }
+
+      <span class="comment">// Classe que representa uma impressora com funcionalidade de impressão e digitalização</span>
+      <span class="class">public class</span> MultiFunctionPrinter : IPrinter, IScanner
+      {
+        <span class="method">public void</span> Print(string document)
+        {
+            <span class="variable">Console.WriteLine</span>($"Imprimindo documento: {document}");
+        }
+
+        <span class="method">public void</span> Scan(string document)
+        {
+            <span class="variable">Console.WriteLine</span>($"Digitalizando documento: {document}");
+        }
+      }
+
+      <span class="comment">// Classe que gerencia a impressão e digitalização</span>
+      <span class="class">public class</span> PrintAndScanManager
+      {
+        <span class="method">public void</span> PrintDocument(IPrinter printer, string document)
+        {
+          <span class="variable">printer.Print</span>(document);
+        }
+
+        <span class="method">public void</span> ScanDocument(IScanner scanner, string document)
+        {
+          <span class="variable">scanner.Scan</span>(document);
+        }
+      }
+
+      <span class="class">public class</span> Program
+      {
+          <span class="method">public static void</span> Main()
+          {
+              PrintAndScanManager manager = <span class="class">new</span> PrintAndScanManager();
+
+              <span class="comment">// Usando uma impressora</span>
+              IPrinter printer = <span class="class">new</span> Printer();
+              <span class="variable">manager.PrintDocument</span>(printer, "Contrato de trabalho");
+
+              <span class="comment">// Usando um scanner</span>
+              IScanner scanner = <span class="class">new</span> Scanner();
+              <span class="variable">manager.ScanDocument</span>(scanner, "Fatura de compra");
+
+              <span class="comment">// Usando uma multifuncional</span>
+              IPrinter <span class="class">multiFunctionPrinter</span> = <span class="class">new</span> MultiFunctionPrinter();
+              <span class="variable">manager.PrintDocument</span>(<span class="class">multiFunctionPrinter</span>, "Apresentação de slides");
+              <span class="variable">manager.ScanDocument</span>(<span class="class">multiFunctionPrinter</span>, "Fotografia");
+          }
+      }
+      </code>
+  </pre>
+
+    <h3>5. Inversão de Dependência (DIP)</h3>
+    <p>
+      O Princípio da Inversão de Dependência (Dependency Inversion Principle - DIP) é um dos princípios SOLID que
+      promove o desacoplamento entre módulos de um sistema. Ele sugere que módulos de alto nível não devem depender
+      diretamente de módulos de baixo nível, ambos devem depender de abstrações. Além disso, abstrações não devem
+      depender de detalhes, mas detalhes devem depender de abstrações.
+    </p>
+    <p>
+      Em outras palavras, ao aplicar o DIP, devemos criar interfaces ou abstrações para representar funcionalidades
+      específicas, e as classes de alto nível devem depender dessas abstrações em vez de depender de classes concretas.
+      Dessa forma, é possível trocar facilmente as implementações concretas sem modificar o código de alto nível.
+    </p>
+
+    <h5>Exemplo de código:</h5>
+    <br>
+    <pre>
+      <code class="dracula-theme">
+<span class="comment">// Interface para funcionalidades de impressão</span>
+<span class="interface">public interface</span> IPrinter
+<span class="interface">{</span>
+<span class="method">    void Print</span>(string document);
+<span class="interface">}</span>
+
+<span class="comment">// Interface para funcionalidades de digitalização</span>
+<span class="interface">public interface</span> IScanner
+<span class="interface">{</span>
+<span class="method">    void</span> Scan(string document);
+<span class="interface">}</span>
+
+<span class="comment">// Classe que representa uma impressora</span>
+<span class="class">public class</span> Printer : IPrinter
+<span class="class">{</span>
+<span class="method">    public void</span> Print(string document)
+<span class="method">    {</span>
+<span class="variable">        Console.WriteLine</span>($"Imprimindo documento: {document}");
+<span class="method">    }</span>
+<span class="class">}</span>
+
+<span class="comment">// Classe que representa um scanner</span>
+<span class="class">public class</span> Scanner : IScanner
+<span class="class">{</span>
+<span class="method">    public void</span> Scan(string document)
+<span class="method">    {</span>
+<span class="variable">        Console.WriteLine</span>($"Digitalizando documento: {document}");
+<span class="method">    }</span>
+<span class="class">}</span>
+
+<span class="comment">// Classe que representa uma impressora com funcionalidade de impressão e digitalização</span>
+<span class="class">public class</span> MultiFunctionPrinter : IPrinter, IScanner
+<span class="class">{</span>
+<span class="method">    public void</span> Print(string document)
+<span class="method">    {</span>
+<span class="variable">        Console.WriteLine</span>($"Imprimindo documento: {document}");
+<span class="method">    }</span>
+
+<span class="method">    public void</span> Scan(string document)
+<span class="method">    {</span>
+<span class="variable">        Console.WriteLine</span>($"Digitalizando documento: {document}");
+<span class="method">    }</span>
+<span class="class">}</span>
+
+<span class="comment">// Classe que gerencia a impressão e digitalização</span>
+<span class="class">public class</span> PrintAndScanManager
+<span class="class">{</span>
+<span class="method">    public void</span> PrintDocument(IPrinter printer, string document)
+<span class="method">    {</span>
+<span class="variable">        printer.Print</span>(document);
+<span class="method">    }</span>
+
+<span class="method">    public void</span> ScanDocument(IScanner scanner, string document)
+<span class="method">    {</span>
+<span class="variable">        scanner.Scan</span>(document);
+<span class="method">    }</span>
+<span class="class">}</span>
+
+<span class="class">public class</span> Program
+<span class="class">{</span>
+<span class="method">    public static void</span> Main()
+<span class="method">    {</span>
+<span class="class">        PrintAndScanManager</span> manager = <span class="class">new</span> PrintAndScanManager();
+
+        <span class="comment">// Usando uma impressora</span>
+<span class="class">        IPrinter</span> printer = <span class="class">new</span> Printer();
+<span class="variable">        manager.PrintDocument</span>(printer, "Contrato de trabalho");
+
+        <span class="comment">// Usando um scanner</span>
+<span class="class">        IScanner</span> scanner = <span class="class">new</span> Scanner();
+<span class="variable">        manager.ScanDocument</span>(scanner, "Fatura de compra");
+
+        <span class="comment">// Usando uma multifuncional</span>
+<span class="class">        IPrinter</span> multiFunctionPrinter = <span class="class">new</span> MultiFunctionPrinter();
+<span class="variable">        manager.PrintDocument</span>(multiFunctionPrinter, "Apresentação de slides");
+<span class="variable">        manager.ScanDocument</span>(multiFunctionPrinter, "Fotografia");
+<span class="method">    }</span>
+<span class="class">}</span>
+    </code>
+</pre>
+
+    <h2>Conclusão</h2>
+    <p>
+      SOLID é uma das bases da programação orientada a objetos e um conjunto de princípios essenciais para escrever
+      código limpo, extensível e de fácil manutenção em projetos .NET. Ao aplicar os princípios SRP, OCP, LSP, ISP e
+      DIP,
+      você estará no caminho certo para criar sistemas sólidos e de alta qualidade.
+    </p>
+
+    <p>
+      Esperamos que este artigo tenha sido útil para você, aprendiz dev! Continue estudando e praticando os princípios
+      SOLID em seus projetos .NET, e em breve você estará construindo aplicações robustas e bem estruturadas. Se tiver
+      dúvidas ou quiser compartilhar suas experiências, deixe um comentário abaixo ou nos siga nas redes sociais.
+    </p>
+
+    <p>
+      Até a próxima, e bons estudos!
+    </p>
+  </section>
+
+  <button id="top" style="position: absolute; right: 0;">
+    <img src="/images/up-arrow.png" alt="Voltar ao topo">
+  </button>
+
+  <footer class="bg-dark text-white py-3 text-center mt-5">
+    <p>Todos os direitos reservados &copy; 2023</p>
+  </footer>
+
+  <!-- Adicione o link para o Bootstrap JS e jQuery (opcional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Adicione o evento de clique ao botão
+    document.getElementById("top").addEventListener("click", function () {
+      // Role para o topo da página
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+
+</html>
