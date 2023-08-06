@@ -133,6 +133,7 @@ a {
     color: #202933;
 }
 
+
 .p-artigo {
     color: #fff !important;
 }
@@ -154,6 +155,15 @@ a {
 .titulo-post {
     margin-bottom: 20px;
     margin-top: 50px;
+    color: #299DD3;
+}
+
+.h2-artigo {
+    color: #299DD3;
+}
+
+.h4-artigo {
+    color: #299DD3;
 }
 
 .avatar-autor {
