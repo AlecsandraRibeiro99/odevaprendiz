@@ -167,11 +167,45 @@
     </div>
   </div>
 
-  <footer class="bg-dark text-white py-3 text-center">
+  <!-- Pop-up de Cookie -->
+  <div id="cookie-popup">
+    <img src="images/oaprendizdev-logo.png" alt="Logo da sua marca" id="logo">
+    <img src="seu_logo.png" alt="Seu Logo" class="logo">
+        <p>
+            oaprendizdev solicita o seu consentimento para utilizar os seus dados pessoais para:
+        </p>
+        <p>
+            Os seus dados pessoais serão processados e as informações do seu dispositivo (cookies, identificadores
+            únicos e outros dados do dispositivo) podem ser armazenadas, acedidas e partilhadas com fornecedores externos
+            ou utilizadas especificamente por este site ou app.
+        </p>
+        <p>
+            Alguns fornecedores poderão processar os seus dados pessoais com base no interesse legítimo. Pode opôr-se a este
+            processamento ao gerir as opções abaixo. Para retirar o consentimento, procure um link na parte inferior desta
+            página ou na nossa <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank">Política de Privacidade</a>.
+        </p>
+    <button id="accept-cookies">Aceitar</button>
+  </div>
+
+   <footer class="bg-dark text-white py-3 text-center">
     <p>Todos os direitos reservados &copy; 2023</p>
   </footer>
 
   <!-- Adicione o link para o Bootstrap JS e jQuery (opcional) -->
+  <script>
+    // Se o usuário já aceitou os cookies, o pop-up não será exibido
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-popup').style.display = 'block';
+    }
+
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+      // Quando o botão "Aceitar" é clicado, esconda o pop-up e armazene o status no localStorage
+      document.getElementById('cookie-popup').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', true);
+    });
+
+    // Seu código JavaScript adicional pode ser colocado aqui
+  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

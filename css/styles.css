@@ -335,3 +335,31 @@ pre {
     color: #f1fa8c;
     /* Yellow */
 }
+
+ /* Estilize o pop-up de acordo com suas preferências */
+ #cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  #cookie-popup p {
+    margin-bottom: 10px;
+  }
+
+  #cookie-popup a {
+    color: #007bff;
+    text-decoration: underline;
+  }
+
+  /* Estilo do logo */
+  #logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
