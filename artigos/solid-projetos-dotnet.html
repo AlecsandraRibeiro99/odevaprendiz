@@ -56,34 +56,34 @@
   <section class="container mt-5">
     <!-- (continuação do artigo) -->
 
-    <p>
+    <p class="p-artigo">
       Olá, devs! Hoje vamos mergulhar em um dos conceitos fundamentais da programação orientada a objetos: SOLID. Se
       você é
       um aprendiz em busca de aprimorar suas habilidades em projetos .NET, entender os princípios SOLID é um passo
       importante para criar código de qualidade, de fácil manutenção e extensível.
     </p>
 
-    <h2 color="#f57c00">O que é SOLID?</h2>
-    <p>
+    <h2 class="h2-artigo">O que é SOLID?</h2>
+    <p class="p-artigo">
       SOLID é um acrônimo criado por Robert C. Martin, que representa cinco princípios que guiam a escrita de software
       orientado a objetos. Esses princípios visam tornar o código mais legível, flexível e fácil de entender e evoluir.
       Vamos dar uma olhada em cada um deles:
     </p>
 
-    <h3 color="#f57c00">1. Responsabilidade Única (SRP)</h3>
-    <p>
+    <h2 class="h2-artigo">1. Responsabilidade Única (SRP)</h3>
+    <p class="p-artigo">
       O princípio da Responsabilidade Única (SRP) é o primeiro dos cinco princípios SOLID. Ele enfatiza que uma classe
       deve ter apenas uma única responsabilidade no sistema. Em outras palavras, uma classe deve ter um único motivo
       para mudar. Ao seguir esse princípio, evitamos classes "inchadas" que tentam fazer muitas coisas diferentes, o que
       pode levar a um código difícil de entender, manter e modificar.
     </p>
-    <p>
+    <p class="p-artigo">
       Uma classe com uma única responsabilidade é mais coesa e fácil de testar. Isso também facilita a reutilização de
       código, pois a classe estará focada em um propósito específico.
     </p>
 
-    <h4 color="#f57c00">Exemplo de código:</h4>
-    <p>
+    <h4 class="h4-artigo">Exemplo de código:</h4>
+    <p class="p-artigo">
       Vamos criar um exemplo simples onde temos uma classe chamada EmailSender, que tem a responsabilidade única de
       enviar e-mails. Outras tarefas, como formatação de texto, não devem ser misturadas nessa classe.
     </p>
@@ -121,24 +121,24 @@
       }
     </code></pre>
 
-    <h3 color="#f57c00">2. Aberto/Fechado (OCP)</h3>
-    <p>
+    <h2 class="h2-artigo">2. Aberto/Fechado (OCP)</h3>
+    <p class="p-artigo">
       O Princípio do Aberto/Fechado (Open/Closed Principle - OCP) é o segundo dos cinco princípios SOLID. Ele estabelece
       que uma classe deve estar aberta para extensão, mas fechada para modificação. Em outras palavras, o comportamento
       de uma classe deve ser facilmente estendido através da adição de novos recursos ou comportamentos sem a
       necessidade de alterar o código já existente.
     </p>
 
-    <p>
+    <p class="p-artigo">
       Esse princípio promove a estabilidade do código existente, pois evita modificações que poderiam introduzir bugs ou
       efeitos colaterais indesejados em outras partes do sistema. Ao seguir o OCP, podemos adicionar novas
       funcionalidades ao nosso código sem afetar o que já está funcionando, tornando o software mais flexível e menos
       propenso a erros.
     </p>
 
-    <h4 color="#f57c00">Exemplo de código:</h4>
+    <h4 class="h4-artigo">Exemplo de código:</h4>
 
-    <p>
+    <p class="p-artigo">
       Vamos utilizar um exemplo de uma classe ShapeAreaCalculator que calcula a área de diferentes formas geométricas
       (círculos e retângulos). A classe deve ser aberta para extensão para que possamos adicionar novas formas
       geométricas no futuro sem modificar o código existente.
@@ -219,13 +219,13 @@
       }
           </code></pre>
     <br>
-    <h3 color="#f57c00">3. Substituição de Liskov (LSP)</h3>
-    <p>
+    <h2 class="h2-artigo">3. Substituição de Liskov (LSP)</h3>
+    <p class="p-artigo">
       O Princípio da Substituição de Liskov (Liskov Substitution Principle - LSP) é o terceiro dos cinco princípios
       SOLID. Esse princípio foi formulado por Barbara Liskov e estabelece que um objeto de uma classe derivada deve
       poder ser substituído por um objeto da classe base sem afetar a corretude do programa.
     </p>
-    <p>
+    <p class="p-artigo">
       Em termos simples, isso significa que uma classe derivada deve ser capaz de substituir uma classe base em qualquer
       situação em que a classe base é utilizada, sem causar comportamentos inesperados ou resultados incorretos. Se uma
       classe derivada não pode ser substituída de forma transparente pela classe base, isso indica uma violação do
@@ -305,17 +305,17 @@
     }
     </code></pre>
     <br>
-    <h3 color="#f57c00">4. Segregação de Interfaces (ISP)</h3>
-    <p>
+    <h2 class="h2-artigo">4. Segregação de Interfaces (ISP)</h3>
+    <p class="p-artigo">
       O Princípio da Segregação de Interfaces (ISP) é o quarto princípio do SOLID. Esse princípio sugere que uma classe
       não deve ser forçada a implementar interfaces que ela não usa. Em outras palavras, é melhor ter várias interfaces
       específicas do que uma única interface grande e genérica.
     </p>
-    <p>O ISP visa evitar que uma classe tenha responsabilidades demais e dependências desnecessárias. Ao dividir as
+    <p class="p-artigo">O ISP visa evitar que uma classe tenha responsabilidades demais e dependências desnecessárias. Ao dividir as
       interfaces em partes menores e mais coesas, você torna a implementação de interfaces mais flexível e modular,
       permitindo que as classes escolham quais interfaces são relevantes para suas funcionalidades.</p>
 
-    <h4 color="#f57c00">Exemplo de código:</h4>
+    <h4 class="h4-artigo">Exemplo de código:</h4>
     <pre>
       <code class="dracula-theme">
       <span class="comment">// Interface para funcionalidades de impressão</span>
@@ -399,20 +399,20 @@
       </code>
   </pre>
 
-    <h3 color="#f57c00">5. Inversão de Dependência (DIP)</h3>
-    <p>
+    <h2 class="h2-artigo">5. Inversão de Dependência (DIP)</h3>
+    <p class="p-artigo">
       O Princípio da Inversão de Dependência (Dependency Inversion Principle - DIP) é um dos princípios SOLID que
       promove o desacoplamento entre módulos de um sistema. Ele sugere que módulos de alto nível não devem depender
       diretamente de módulos de baixo nível, ambos devem depender de abstrações. Além disso, abstrações não devem
       depender de detalhes, mas detalhes devem depender de abstrações.
     </p>
-    <p>
+    <p class="p-artigo">
       Em outras palavras, ao aplicar o DIP, devemos criar interfaces ou abstrações para representar funcionalidades
       específicas, e as classes de alto nível devem depender dessas abstrações em vez de depender de classes concretas.
       Dessa forma, é possível trocar facilmente as implementações concretas sem modificar o código de alto nível.
     </p>
 
-    <h4 color="#f57c00">Exemplo de código:</h4>
+    <h4 class="h4-artigo">Exemplo de código:</h4>
     <br>
     <pre>
       <code class="dracula-theme">
@@ -497,21 +497,21 @@
     </code>
 </pre>
 
-    <h2 color="#f57c00">Conclusão</h2>
-    <p>
+    <h2 class="h2-artigo">Conclusão</h2>
+    <p class="p-artigo">
       SOLID é uma das bases da programação orientada a objetos e um conjunto de princípios essenciais para escrever
       código limpo, extensível e de fácil manutenção em projetos .NET. Ao aplicar os princípios SRP, OCP, LSP, ISP e
       DIP,
       você estará no caminho certo para criar sistemas sólidos e de alta qualidade.
     </p>
 
-    <p>
+    <p class="p-artigo">
       Esperamos que este artigo tenha sido útil para você, aprendiz dev! Continue estudando e praticando os princípios
       SOLID em seus projetos .NET, e em breve você estará construindo aplicações robustas e bem estruturadas. Se tiver
       dúvidas ou quiser compartilhar suas experiências, deixe um comentário abaixo ou nos siga nas redes sociais.
     </p>
 
-    <p>
+    <p class="p-artigo">
       Até a próxima, e bons estudos!
     </p>
   </section>
@@ -521,7 +521,7 @@
   </button>
 
   <footer class="bg-dark text-white py-3 text-center mt-5">
-    <p>Todos os direitos reservados &copy; 2023</p>
+    <p class="p-artigo">Todos os direitos reservados &copy; 2023</p>
   </footer>
 
   <!-- Adicione o link para o Bootstrap JS e jQuery (opcional) -->
