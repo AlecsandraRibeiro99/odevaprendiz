@@ -270,3 +270,39 @@ code {
 .comment {
     color: #6272a4; /* Blue */
 }
+
+
+/* // artigo - solid-projetos-dotnet */
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    padding: 12px;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+}
+
+.dracula-theme-solid {
+    background-color: #282a36;
+    color: #f8f8f2;
+}
+
+.keyword {
+    color: #f1fa8c; /* Yellow */
+}
+
+.comment {
+    color: #6272a4; /* Blue */
+}
+
+.class {
+    color: #50fa7b; /* Green */
+}
+
+.method {
+    color: #ff79c6; /* Pink */
+}
+
+.string {
+    color: #f1fa8c; /* Yellow */
+}
+
