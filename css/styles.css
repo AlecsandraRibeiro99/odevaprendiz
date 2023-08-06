@@ -244,31 +244,38 @@ code {
 }
 
 .keyword {
-    color: #f1fa8c; /* Yellow */
+    color: #f1fa8c;
+    /* Yellow */
 }
 
 .dataType {
-    color: #ff79c6; /* Pink */
+    color: #ff79c6;
+    /* Pink */
 }
 
 .variable {
-    color: #ff5555; /* Red */
+    color: #ff5555;
+    /* Red */
 }
 
 .number {
-    color: #ffb86c; /* Orange */
+    color: #ffb86c;
+    /* Orange */
 }
 
 .constructor {
-    color: #f1fa8c; /* Yellow */
+    color: #f1fa8c;
+    /* Yellow */
 }
 
 .method {
-    color: #50fa7b; /* Green */
+    color: #50fa7b;
+    /* Green */
 }
 
 .comment {
-    color: #6272a4; /* Blue */
+    color: #6272a4;
+    /* Blue */
 }
 
 
@@ -287,22 +294,26 @@ pre {
 }
 
 .keyword {
-    color: #f1fa8c; /* Yellow */
+    color: #f1fa8c;
+    /* Yellow */
 }
 
 .comment {
-    color: #6272a4; /* Blue */
+    color: #6272a4;
+    /* Blue */
 }
 
 .class {
-    color: #50fa7b; /* Green */
+    color: #50fa7b;
+    /* Green */
 }
 
 .method {
-    color: #ff79c6; /* Pink */
+    color: #ff79c6;
+    /* Pink */
 }
 
 .string {
-    color: #f1fa8c; /* Yellow */
+    color: #f1fa8c;
+    /* Yellow */
 }
-
