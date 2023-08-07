@@ -11,17 +11,20 @@
   <!-- Adicione o link para o Bootstrap CSS -->
   <link rel="icon" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="css/styles.css" rel="stylesheet">
+  <!-- Adicione um hash ao nome do arquivo CSS para cache-busting -->
+  <link href="css/styles.css?v=1.0" rel="stylesheet">
+  <link rel=preload>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9811079725832012"
     crossorigin="anonymous"></script>
 </head>
+
 
 <body>
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
       <div class="logo_container">
         <a title="dev.aprendiz" href="/index.html"></a>
-        <img src="/images/oaprendizdev-logo.png" alt="">
+        <img src="/images/oaprendizdev-logo.png" alt="oaprendizdev-logo" width="200" height="42">
       </div>
       <a href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/" target="_blank">
         <img src="/images/logo-linkedin.png" alt="LinkedIn logo" width="30" height="30">
@@ -46,12 +49,12 @@
         <div class="col-lg-3 col-md-4 col-sm-5 py-2">
           <div class="card text-white bg-super-dark mb-3">
             <a href="artigos/solid-projetos-dotnet.html">
-              <img class="card-img-top" src="/images/capa-blog-solid.png"
-                alt=".NET Core - Sobrescrevendo o appsettings.json">
+              <img class="card-img-top" src="/images/capa-blog-solid.webp"
+                alt=".NET Core - blog-solid" width="208" height="120">
               <div class="card-body">
-                <h5 class="card-title">
+                <h2 class="card-title">
                   SOLID em Projetos .NET: Fundamentos e Melhores Práticas
-                </h5>
+                </h2>
                 <br>
                 <div class="course_teacher">Claudio Marcelo Ribeiro</div>
               </div>
@@ -61,12 +64,12 @@
         <div class="col-lg-3 col-md-4 col-sm-5 py-2">
           <div class="card text-white bg-super-dark mb-3">
             <a href="/artigos/expressoes-lambda.html">
-              <img class="card-img-top" src="/images/capa-blog-lambda.png"
-                alt="Explorando o poder das Expressões Lambda!">
+              <img class="card-img-top" src="/images/capa-blog-lambda.webp"
+                alt="Explorando o poder das Expressões Lambda!" width="208" height="120">
               <div class="card-body">
-                <h5 class="card-title">
+                <h2 class="card-title">
                   Explorando o poder das Expressões Lambda com .NET!
-                </h5>
+                </h2>
                 <br>
 
                 <div class="course_teacher">Claudio Marcelo Ribeiro</div>
@@ -74,95 +77,6 @@
             </a>
           </div>
         </div>
-        <!-- <div class="col-lg-3 col-md-4 col-sm-5 py-2">
-          <div class="card text-white bg-super-dark mb-3">
-            <a href="/blog/lambda.html">
-              <img class="card-img-top" src="/images/capa-blog-dapper-vs-ef.png"
-                alt=".NET Core - Sobrescrevendo o appsettings.json">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Batalha de Gigantes: Dapper vs. Entity Framework no Mundo do .NET!
-                </h5>
-                <br>
-                <div class="course_teacher">Claudio Marcelo Ribeiro</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-5 py-2">
-          <div class="card text-white bg-super-dark mb-3">
-            <a href="/blog/lambda.html">
-              <img class="card-img-top" src="/images/capa-conteudo-em-dev.png"
-                alt=".NET Core - Sobrescrevendo o appsettings.json">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Conteúdo sendo desenvolvido
-                </h5>
-                <br>
-                <div class="course_teacher">Claudio Marcelo Ribeiro</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-5 py-2">
-          <div class="card text-white bg-super-dark mb-3">
-            <a href="/blog/lambda.html">
-              <img class="card-img-top" src="/images/capa-conteudo-em-dev.png" alt="Capa-Lambda">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Conteúdo sendo desenvolvido
-                </h5>
-                <br>
-                <div class="course_teacher">Claudio Marcelo Ribeiro</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-5 py-2">
-          <div class="card text-white bg-super-dark mb-3">
-            <a href="/blog/lambda.html">
-              <img class="card-img-top" src="/images/capa-conteudo-em-dev.png"
-                alt=".NET Core - Sobrescrevendo o appsettings.json">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Conteúdo sendo desenvolvido
-                </h5>
-                <br>
-                <div class="course_teacher">Claudio Marcelo Ribeiro</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-5 py-2">
-          <div class="card text-white bg-super-dark mb-3">
-            <a href="/blog/lambda.html">
-              <img class="card-img-top" src="/images/capa-conteudo-em-dev.png"
-                alt=".NET Core - Sobrescrevendo o appsettings.json">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Conteúdo sendo desenvolvido
-                </h5>
-                <br>
-                <div class="course_teacher">Claudio Marcelo Ribeiro</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-5 py-2">
-          <div class="card text-white bg-super-dark mb-3">
-            <a href="/blog/lambda.html">
-              <img class="card-img-top" src="/images/capa-conteudo-em-dev.png"
-                alt=".NET Core - Sobrescrevendo o appsettings.json">
-              <div class="card-body">
-                <h5 class="card-title">
-                  Conteúdo sendo desenvolvido
-                </h5>
-                <br>
-                <div class="course_teacher">Claudio Marcelo Ribeiro</div>
-              </div>
-            </a>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -196,11 +110,32 @@
       localStorage.setItem('cookiesAccepted', true);
     });
 
+    function loadAds() {
+      // Carregue o script de anúncios do AdSense (show_ads_impl_with_ama_fy2021.js) somente se a div de anúncios estiver visível na tela
+      const adContainer = document.getElementById('ad-container');
+      const isAdContainerVisible = adContainer.getBoundingClientRect().top - window.innerHeight <= 0;
+
+      if (isAdContainerVisible) {
+        const script1 = document.createElement('script');
+        script1.src = 'https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202308010102/show_ads_impl_with_ama_fy2021.js';
+        script1.setAttribute('data-ad-client', 'ca-pub-9811079725832012');
+        adContainer.appendChild(script1);
+
+        const script2 = document.createElement('script');
+        script2.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+        script2.setAttribute('data-ad-client', 'ca-pub-9811079725832012');
+        adContainer.appendChild(script2);
+      }
+    }
+
+    // Verifica se o conteúdo da página está completamente carregado antes de chamar a função loadAds
+    window.addEventListener('load', loadAds);
+    // Se você estiver usando SPA (Single Page Application) ou conteúdo dinâmico, também pode chamar a função loadAds em eventos relevantes de rolagem ou mudanças de conteúdo.
+
+
+
     // Seu código JavaScript adicional pode ser colocado aqui
   </script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
