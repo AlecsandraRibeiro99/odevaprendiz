@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dev.aprendiz - blog</title>
-  <meta name="description" content="Página inicial do blog oaprendizdev, onde o usuário tem acesso a todos os artigos escritos.">
+  <meta name="description"
+    content="Página inicial do blog oaprendizdev, onde o usuário tem acesso a todos os artigos escritos.">
   <!-- Adicione os links para as fontes Montserrat e Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <!-- Adicione o link para o Bootstrap CSS -->
@@ -15,6 +16,15 @@
   <link href="css/styles.css?v=1.0" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9811079725832012"
     crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3ZF3DZQTT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y3ZF3DZQTT');
+  </script>
 </head>
 
 
@@ -48,8 +58,8 @@
         <div class="col-lg-3 col-md-4 col-sm-5 py-2">
           <div class="card text-white bg-super-dark mb-3">
             <a href="artigos/solid-projetos-dotnet.html">
-              <img class="card-img-top" src="/images/capa-blog-solid.webp"
-     alt=".NET Core - blog-solid" style="max-width: 100%;" height="auto">
+              <img class="card-img-top" src="/images/capa-blog-solid.webp" alt=".NET Core - blog-solid"
+                style="max-width: 100%;" height="auto">
               <div class="card-body">
                 <h2 class="card-title">
                   SOLID em Projetos .NET: Fundamentos e Melhores Práticas
@@ -84,12 +94,13 @@
   <div id="cookie-popup">
     <img src="images/oaprendizdev-logo.png" alt="Logo da sua marca" width="100" height="42" id="logo">
     <p>
-      oaprendizdev solicita o seu consentimento para utilizar os seus dados pessoais e dispositivo, 
-      como cookies e identificadores únicos. Os podem ser armazenados e compartilhados com terceiros. Consulte a nossa <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank">Política de Privacidade</a>.
-  </p>
+      oaprendizdev solicita o seu consentimento para utilizar os seus dados pessoais e dispositivo,
+      como cookies e identificadores únicos. Os podem ser armazenados e compartilhados com terceiros. Consulte a nossa
+      <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank">Política de Privacidade</a>.
+    </p>
     <button id="accept-cookies">Aceitar</button>
   </div>
-   <footer class="bg-dark text-white py-3 text-center">
+  <footer class="bg-dark text-white py-3 text-center">
     <p>Todos os direitos reservados &copy; 2023</p>
   </footer>
 
@@ -100,7 +111,7 @@
       document.getElementById('cookie-popup').style.display = 'block';
     }
 
-    document.getElementById('accept-cookies').addEventListener('click', function() {
+    document.getElementById('accept-cookies').addEventListener('click', function () {
       // Quando o botão "Aceitar" é clicado, esconda o pop-up e armazene o status no localStorage
       document.getElementById('cookie-popup').style.display = 'none';
       localStorage.setItem('cookiesAccepted', true);
