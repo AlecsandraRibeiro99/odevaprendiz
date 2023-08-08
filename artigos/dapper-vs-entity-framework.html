@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.aprendiz - Dapper vs. Entity Framework</title>
+  <<meta name="description" content="Artigo sobre Dapper vs. Entity Framework">
+    <!-- Links para fontes Montserrat e Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <!-- Adicione o link para o Bootstrap CSS -->
+    <link rel="icon" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Adicione um hash ao nome do arquivo CSS para cache-busting -->
+    <link href="/css/styles.css?v=1.0" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9811079725832012"
+      crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3ZF3DZQTT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y3ZF3DZQTT');
+    </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <div class="logo_container">
+        <a title="dev.aprendiz" href="/index.html"></a>
+        <img src="/images/oaprendizdev-logo.png" alt="logo-dev.aprendiz">
+      </div>
+      <a href="/index.html" title="Blog" style="color: #000000; font-size: 22px; font-weight: bold;">Blog</a>
+      <a href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/" target="_blank">
+        <img src="/images/logo-linkedin.png" alt="LinkedIn logo" width="30" height="30">
+      </a>
+    </div>
+  </nav>
+
+  <div class="ua-page-hero"
+    style="background-image: linear-gradient(rgb(65, 71, 73), #262626); padding-top: 30px; padding-bottom: 50px; --darkreader-inline-bgimage: linear-gradient(#713c7d, #55375d);">
+    <div class="container">
+      <br>
+      <h2 class="formacoes-header-titulo titulo-post">
+        Expressões Lambda em com .NET
+      </h2>
+      <div class="row">
+        <div class="col-lg-1 col-md-2 col-sm-2">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <img class="img-fluid avatar-autor rounded-circle img-thumbnail"
+            style="width: 40px; height: 40px; padding: 0.10rem" src="/images/foto-perfil-claudio.png"
+            title="Ir para o Linkedin do Claudio Marcelo RIbeiro" alt="Claudio Marcelo Ribeiro">
+        </div>
+        <div class="col-md-10 col-sm-10" style="padding-top: 10px">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <h6 color="#fff">Claudio Marcelo Ribeiro</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="courses">
+    <div class="container">
+      <p class="p-artigo">
+        Bem-vindo ao blog dev.aprendiz! Neste artigo, vamos comparar duas abordagens populares para acesso a dados em
+        .NET:
+        Dapper e Entity Framework. Exploraremos desde os conceitos fundamentais até exemplos práticos, para ajudá-lo a
+        escolher a melhor abordagem para seus projetos.
+      </p>
+
+      <!-- Introdução ao Dapper e Entity Framework -->
+      <h1 class="h2-artigo">Introdução ao Dapper e Entity Framework</h1>
+      <h2 class="h2-artigo">O que é o Dapper?</h2>
+
+      <p class="p-artigo">O Dapper é uma biblioteca de mapeamento objeto-relacional (ORM) desenvolvida pela Stack
+        Overflow, conhecida
+        por sua simplicidade e alto desempenho. Ele fornece uma camada de abstração para interagir com o banco de dados,
+        convertendo
+        automaticamente os resultados das consultas em objetos .NET. O Dapper utiliza consultas SQL diretas, permitindo
+        um controle preciso
+        sobre as consultas executadas e otimizações customizadas.
+      </p>
+
+      <h2 class="h2-artigo">O que é o Entity Framework?</h2>
+
+      <p class="p-artigo">O Entity Framework (EF) é um framework ORM completo da Microsoft que oferece uma abstração de
+        alto nível para
+        interagir com bancos de dados. Ele permite que os desenvolvedores trabalhem com objetos .NET diretamente,
+        abstraindo a lógica de
+        acesso a dados e gerenciando automaticamente as operações CRUD (Create, Read, Update, Delete) por meio de
+        classes de entidade e
+        consultas LINQ.
+      </p>
+
+      <h1 class="h2-artigo">Vantagens e Desvantagens</h1>
+
+      <h3 class="h2-artigo">Dapper: Acesso de Baixo Nível</h3>
+      <h4 class="h2-artigo">Vantagens:</h4>
+
+      <p class="p-artigo"><b>Desempenho:</b> O Dapper é amplamente conhecido por sua performance excepcional. Ele não
+        adiciona sobrecarga significativa
+        devido à sua abordagem mais leve e direta.
+      </p>
+
+      <p class="p-artigo"><b>Controle de Consultas:</b> Como o Dapper utiliza consultas SQL diretas, os desenvolvedores
+        têm controle total sobre o que
+        está sendo executado no banco de dados. Isso é especialmente útil para otimizações específicas.
+      </p>
+
+      <p class="p-artigo"><b>Mapeamento Flexível:</b> O mapeamento de resultados para objetos é altamente flexível e
+        customizável, permitindo ajustar os
+        resultados de consultas complexas.
+      </p>
+
+      <h4 class="h2-artigo">Desvantagens:</h4>
+
+      <p class="p-artigo"><b>Maior Trabalho Manual:</b> Em comparação com o Entity Framework, o Dapper exige mais
+        trabalho manual no mapeamento de consultas
+        para objetos .NET.
+      </p>
+
+      <h3 class="h2-artigo">Entity Framework: ORM Poderoso</h3>
+
+      <h4 class="h2-artigo">Vantagens:</h4>
+
+      <p class="p-artigo"><b>Abstração de Alto Nível:</b> O EF abstrai muitos detalhes do acesso a dados, tornando o
+        processo mais rápido e menos propenso a erros.
+      </p>
+
+      <p class="p-artigo"><b>Rapidez no Desenvolvimento:</b> Devido à abordagem de abstração, o EF pode acelerar o
+        desenvolvimento, especialmente em cenários onde os
+        modelos de banco de dados são complexos.
+      </p>
+
+      <p class="p-artigo"><b>Consultas LINQ:</b> O uso de consultas LINQ torna as consultas mais legíveis e mais
+        próximas da linguagem natural.
+      </p>
+
+      <h4 class="h2-artigo">Desvantagens:</h4>
+
+      <p class="p-artigo"><b>Overhead e Complexidade:</b> O EF pode adicionar algum overhead devido à abstração
+        adicional e à complexidade interna, o que pode afetar o
+        desempenho em aplicações altamente exigentes.
+      </p>
+
+      <p class="p-artigo"><b>Menos Controle de Consultas:</b> O EF oferece menos controle direto sobre as consultas
+        executadas no banco de dados, o que pode limitar as
+        otimizações específicas.
+      </p>
+
+      <h4 class="h4-artigo">Exemplo de Consultas e Relacionamentos</h4>
+      <h6 class="h4-artigo">Dapper</h6>
+      <pre><code class="dracula-theme">
+        // Exemplo Dapper
+        public IEnumerable&lt;Customer&gt; GetCustomersWithOrders()
+        {
+            using var connection = new SqlConnection(connectionString);
+            var query = "SELECT c.*, p.* FROM Customers c INNER JOIN Orders p ON c.Id = p.CustomerId";
+            var customerDictionary = new Dictionary&lt;int, Customer&gt;();
+
+            var result = connection.Query&lt;Customer, Order, Customer&gt;(
+                query,
+                (customer, order) =&gt;
+                {
+                    if (!customerDictionary.TryGetValue(customer.Id, out var customerEntry))
+                    {
+                        customerEntry = customer;
+                        customerEntry.Orders = new List&lt;Order&gt;();
+                        customerDictionary.Add(customerEntry.Id, customerEntry);
+                    }
+                    customerEntry.Orders.Add(order);
+                    return customerEntry;
+                },
+                splitOn: "Id"
+            );
+
+            return result.Distinct();
+        }
+
+      </code></pre>
+      <h6 class="h4-artigo">Entity Framework</h6>
+      <pre><code class="dracula-theme">
+        // Exemplo Entity Framework
+        public IEnumerable&lt;Customer&gt; GetCustomersWithOrders()
+        {
+            using var context = new MyDbContext();
+            return context.Customers.Include(c =&gt; c.Orders).ToList();
+        }
+              </code></pre>
+        
+
+      <h4 class="h4-artigo">Exemplo de Atualização de Dados</h4>
+      <h6 class="h4-artigo">Dapper</h6>
+      <pre><code class="dracula-theme">
+        // Exemplo Dapper
+        public void UpdateProduct(Product product)
+        {
+            using var connection = new SqlConnection(connectionString);
+            var query = "UPDATE Products SET Name = @Name, Price = @Price WHERE Id = @Id";
+            connection.Execute(query, product);
+        }
+      </code></pre>
+      <br>
+      <h6 class="h4-artigo">Entity Framework</h6>
+      <pre><code class="dracula-theme">
+        // Exemplo Entity Framework
+        public void UpdateProduct(Product product)
+        {
+            using var context = new MyDbContext();
+            var existingProduct = context.Products.Find(product.Id);
+            if (existingProduct != null)
+            {
+                existingProduct.Name = product.Name;
+                existingProduct.Price = product.Price;
+                context.SaveChanges();
+            }
+        }
+              </code></pre>
+              <br>
+
+      <h2 class="h2-artigo">Pacotes NuGet</h2>
+
+      <h4 class="h4-artigo">Dapper</h4>
+    <p class="p-artigo">
+      Instalação: <code>Install-Package Dapper</code>
+      <br>
+      Documentação: <a href="https://dapper-tutorial.net/" target="_blank">https://dapper-tutorial.net/</a>
+    </p>
+
+    <h4 class="h4-artigo">Entity Framework</h4>
+    <p class="p-artigo">
+      Instalação: <code>Install-Package Microsoft.EntityFrameworkCore</code>
+      <br>
+      Documentação: <a href="https://docs.microsoft.com/pt-br/ef/core/" target="_blank">https://docs.microsoft.com/pt-br/ef/core/</a>
+    </p>
+
+    <p class="p-artigo">
+      Além disso, você precisará ter uma biblioteca para trabalhar com bancos de dados relacionais. Você pode escolher entre diferentes bibliotecas de banco de dados de acordo com suas preferências e requisitos:
+    </p>
+
+    <h4 class="h4-artigo">Para SQL Server</h4>
+    <p class="p-artigo">
+      Pacote NuGet: <code>Install-Package Microsoft.Data.SqlClient</code>
+      <br>
+      Documentação: <a class="h4-artigo" href="https://docs.microsoft.com/pt-br/sql/connect/ado-net/microsoft-data-sqlclient-namespace" target="_blank">https://docs.microsoft.com/pt-br/sql/connect/ado-net/microsoft-data-sqlclient-namespace</a>
+    </p>
+
+    <h4 class="h4-artigo">Para MySQL</h4>
+    <p class="p-artigo">
+      Pacote NuGet: <code>Install-Package MySql.Data.EntityFrameworkCore</code>
+      <br>
+      Documentação: <a class="h4-artigo" href="https://dev.mysql.com/doc/connector-net/en/" target="_blank">https://dev.mysql.com/doc/connector-net/en/</a>
+    </p>
+
+    <h4 class="h4-artigo">Para PostgreSQL</h4>
+    <p class="p-artigo">
+      Pacote NuGet: <code>Install-Package Npgsql.EntityFrameworkCore.PostgreSQL</code>
+      <br>
+      Documentação: <a class="h4-artigo" href="https://www.npgsql.org/efcore/" target="_blank">https://www.npgsql.org/efcore/</a>
+    </p>
+
+    <p class="p-artigo">
+      Lembre-se de que você deve configurar as strings de conexão corretamente em seu arquivo de configuração (appsettings.json ou equivalente) para que o Dapper e o Entity Framework possam se conectar ao banco de dados. Certifique-se de seguir as instruções de configuração adequadas para o banco de dados que você está usando.
+    </p>
+
+    <p class="p-artigo">
+      Com esses pacotes instalados e as strings de conexão configuradas, você estará pronto para começar a usar tanto o Dapper quanto o Entity Framework em seu projeto.
+    </p>
+
+
+      <!-- Conclusão -->
+      <h2 class="h2-artigo">Conclusão</h2>
+
+      <p class="p-artigo">A escolha entre o Dapper e o Entity Framework depende das necessidades e prioridades 
+        do seu projeto. Se você valoriza alto desempenho, controle de consultas e está disposto a realizar mais 
+        trabalho manual de mapeamento, o Dapper pode ser a melhor opção. Por outro lado, se deseja uma abordagem 
+        mais abstrata, rapidez no desenvolvimento e consultas mais legíveis, o Entity Framework pode atender melhor 
+        às suas necessidades.
+      </p>
+
+      <p class="p-artigo">Ambas as abordagens têm seus prós e contras, e a escolha deve considerar fatores como o tipo 
+        de projeto, complexidade do banco de dados, experiência da equipe e requisitos de desempenho. Experimente ambas as 
+        opções em projetos menores para avaliar qual se encaixa melhor no seu fluxo de trabalho e metas de desenvolvimento.
+      </p>
+
+      <p class="p-artigo">Esperamos que este artigo tenha sido útil para você. Até a próxima!</p>
+    </div>
+  </div>
+
+  <button id="top" style="position: absolute; right: 0;">
+    <img src="/images/up-arrow.png" alt="Voltar ao topo">
+  </button>
+
+  <footer class="bg-dark text-white py-3 text-center">
+    <p class=".p-artigo">Todos os direitos reservados &copy; 2023</p>
+  </footer>
+
+  <!-- Links para scripts e bibliotecas -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Adicione o evento de clique ao botão
+    document.getElementById("top").addEventListener("click", function () {
+      // Role para o topo da página
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+
+</html>
