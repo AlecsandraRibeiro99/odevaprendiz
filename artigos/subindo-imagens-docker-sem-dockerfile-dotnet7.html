@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.aprendiz - Domine o upload de imagens Docker sem Dockerfile no .NET 7. Simplifique sua implantação.</title>
+  <meta property="og:image" content="/images/capa-blog-docker-sem-dockerfile.png" />
+  <meta property="og:site_name" content="O Aprendiz Dev" /> <!-- Nome do site -->
+<meta property="og:site" content="https://www.oaprendizdev.com.br" /> <!-- Link do site -->
+<meta property="og:title" content="Subindo imagens Docker sem um arquivo Dockerfile no .NET 7" /> <!-- Título do post compartilhado -->
+<meta property="og:description" content="Domine o upload de imagens Docker sem Dockerfile no .NET 7. Simplifique sua implantação." /> <!-- Descrição do post compartilhado -->
+<meta property="og:url" content="https://oaprendizdev.com.br/artigos/subindo-imagens-docker-sem-dockerfile-dotnet7.html" /> <!-- Link para onde o post deve direcionar -->
+
+  <!-- Links para fontes Montserrat e Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <!-- Adicione o link para o Bootstrap CSS -->
+  <link rel="icon" href="/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Adicione um hash ao nome do arquivo CSS para cache-busting -->
+  <link href="/css/styles.css?v=1.0" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9811079725832012"
+    crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3ZF3DZQTT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y3ZF3DZQTT');
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <div class="logo_container">
+        <a title="dev.aprendiz" href="/index.html"></a>
+        <img src="/images/oaprendizdev-logo.png" alt="logo-dev.aprendiz">
+      </div>
+      <a href="/index.html" title="Blog" style="color: #000000; font-size: 22px; font-weight: bold;">Blog</a>
+      <a href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/" target="_blank">
+        <img src="/images/logo-linkedin.png" alt="LinkedIn logo" width="30" height="30">
+      </a>
+    </div>
+  </nav>
+
+  <div class="ua-page-hero"
+    style="background-image: linear-gradient(rgb(65, 71, 73), #262626); padding-top: 30px; padding-bottom: 50px; --darkreader-inline-bgimage: linear-gradient(#713c7d, #55375d);">
+    <div class="container">
+      <br>
+      <h2 class="formacoes-header-titulo titulo-post">
+        Subindo imagens Docker sem um arquivo Dockerfile no .NET 7
+      </h2>
+      <div class="row">
+        <div class="col-lg-1 col-md-2 col-sm-2">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <img class="img-fluid avatar-autor rounded-circle img-thumbnail"
+            style="width: 40px; height: 40px; padding: 0.10rem" src="/images/foto-perfil-claudio.png"
+            title="Ir para o Linkedin do Claudio Marcelo RIbeiro" alt="Claudio Marcelo Ribeiro">
+        </div>
+        <div class="col-md-10 col-sm-10" style="padding-top: 10px">
+          <a title="Ir para o Linkedin do Claudio Marcelo RIbeiro"
+            href="https://www.linkedin.com/in/claudio-marcelo-ribeiro-17929416a/"></a>
+          <h6 color="#fff">Claudio Marcelo Ribeiro</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="courses">
+    <div class="container">
+      <p class="p-artigo">Bem-vindo ao blog dev.aprendiz! Neste artigo, exploraremos como o .NET 7 introduziu um novo
+        recurso que permite
+        que as imagens Docker sejam criadas sem um arquivo Dockerfile. Isso torna mais fácil para os desenvolvedores
+        criar
+        e implantar imagens Docker para seus aplicativos .NET.
+      </p>
+
+      <!-- Introdução ao Dapper e Entity Framework -->
+      <h2 class="h2-artigo">Com um arquivo Dockerfile</h2>
+
+      <p class="p-artigo">Para criar uma imagem Docker com um arquivo Dockerfile, você pode usar um editor de texto para
+        criar um arquivo chamado Dockerfile.
+        O arquivo Dockerfile deve conter as instruções para construir a imagem Docker.
+      </p>
+      <p class="p-artigo">Por exemplo, o seguinte Dockerfile criaria uma imagem Docker de um aplicativo ASP.NET Core:
+      </p>
+
+      <pre><code class="dracula-theme">
+      <b color="#299DD3">FROM mcr.microsoft.com/dotnet/aspnet:6.0
+
+      WORKDIR /app
+      
+      COPY . .
+      
+      EXPOSE 80
+      
+      RUN dotnet publish
+      
+      CMD dotnet run </b>
+    </code></pre>
+
+      <p class="p-artigo">
+        Depois de criar o arquivo Dockerfile, você pode construir a imagem Docker usando o comando <b
+          color="#299DD3">docker build</b>.
+        O comando <b color="#299DD3">docker build</b>
+        deve ser executado na pasta que contém o arquivo Dockerfile.
+      </p>
+
+      <p class="p-artigo">Por exemplo, para construir a imagem Docker do arquivo Dockerfile acima, você usaria o
+        seguinte comando:
+      </p>
+
+      <pre><code class="dracula-theme">
+        <b color="#299DD3">docker build -t myapp .</b>
+      </code></pre>
+
+      <p class="p-artigo">
+        O comando <b color="#299DD3">docker build</b> criaria uma imagem Docker chamada <b color="#299DD3">myapp</b>.
+      </p>
+
+      <p class="p-artigo">Depois de criar a imagem Docker, você pode implantá-la em um contêiner usando o comando
+        <b color="#299DD3">docker run</b>. O comando <b color="#299DD3">docker run</b>
+        deve ser executado na pasta que contém a imagem Docker.
+      </p>
+
+      <p class="p-artigo">
+        Por exemplo, para implantar a imagem Docker <b color="#299DD3">myapp</b> em um contêiner, você usaria o seguinte
+        comando:
+      </p>
+
+      <pre><code class="dracula-theme">
+        <b color="#299DD3">docker run -p 8080:80 myapp</b>
+            </code></pre>
+
+      <p class="p-artigo">O comando <b color="#299DD3">docker run</b> implantaria a imagem myapp em um contêiner e
+        mapearia a porta 8080
+        do host para a porta 80 do contêiner.
+        Você pode então acessar seu aplicativo ASP.NET Core no navegador no endereço <a class="h4-artigo"
+          href="http://localhost:8080">http://localhost:8080</a>.</p>
+
+      <br>
+      <h2 class="h2-artigo">Sem um arquivo Dockerfile</h2>
+      <p class="p-artigo">Para criar uma imagem Docker sem um arquivo Dockerfile, você pode usar o comando <b
+          color="#299DD3">dotnet publish --output-image</b>.
+        Este comando criará uma imagem Docker do seu aplicativo .NET e a salvará na pasta atual.</p>
+
+      <pre><code class="dracula-theme">
+      <b color="#299DD3">dotnet publish --output-image myapp:latest</b>
+    </code></pre>
+
+      <p class="p-artigo">Este comando criaria uma imagem Docker chamada myapp:latest na pasta atual.</p>
+
+      <p class="p-artigo">Depois de criar a imagem Docker, você pode implantá-la em um contêiner usando o comando <b
+          color="#299DD3">docker run</b>.</p>
+
+      <pre><code class="dracula-theme">
+      <b color="#299DD3">docker run -p 5000:80 myapp:latest</b>
+    </code></pre>
+
+      <p class="p-artigo">Este comando implantaria a imagem myapp:latest em um contêiner e mapearia a porta 5000 do host
+        para a porta 80 do contêiner.
+        Você pode então acessar seu aplicativo .NET no navegador no endereço <a class="h4-artigo href="
+          http://localhost:5000">http://localhost:5000</a>.
+      </p>
+      <br>
+      <h2 class="h2-artigo">Vantagens</h2>
+
+      <p class="p-artigo">Existem várias vantagens em usar o .NET 7 para criar imagens Docker sem um arquivo Dockerfile.
+        Essas vantagens incluem:</p>
+
+      <ul>
+        <li>Fácil de usar: o comando <b color="#299DD3">dotnet publish --output-image</b> torna muito fácil para os
+          desenvolvedores
+          criar e implantar imagens Docker para seus aplicativos .NET.</li>
+        <li>Versátil: o comando <b color="#299DD3">dotnet publish --output-image</b> pode ser usado para criar imagens
+          Docker de uma
+          ampla variedade de aplicativos .NET.</li>
+        <li>Escalável: o comando <b color="#299DD3">dotnet publish --output-image</b> pode ser usado para criar imagens
+          Docker que são
+          escaláveis e podem ser implantadas em uma variedade de ambientes.</li>
+      </ul>
+      <br>
+      <h2 class="h2-artigo">Conclusão</h2>
+
+      <p class="p-artigo">O .NET 7 introduziu um novo recurso que torna mais fácil para os desenvolvedores criar e
+        implantar imagens Docker
+        para seus aplicativos .NET. Usando o comando <b color="#299DD3">dotnet publish --output-image</b>, você pode
+        criar imagens
+        Docker de seus aplicativos .NET sem precisar escrever um arquivo Dockerfile. Isso torna o processo de criação e
+        implantação de imagens Docker muito mais fácil e rápido.
+      </p>
+
+      <br>
+      <p class="p-artigo">Esperamos que este artigo tenha sido útil para você. Até a próxima!</p>
+    </div>
+  </div>
+
+  <button id="top" style="position: absolute; right: 0;">
+    <img src="/images/up-arrow.png" alt="Voltar ao topo">
+  </button>
+
+  <footer class="bg-dark text-white py-3 text-center">
+    <p class=".p-artigo">Todos os direitos reservados &copy; 2023</p>
+  </footer>
+
+  <!-- Links para scripts e bibliotecas -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Adicione o evento de clique ao botão
+    document.getElementById("top").addEventListener("click", function () {
+      // Role para o topo da página
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+
+</html>
