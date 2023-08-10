@@ -7,7 +7,18 @@
   <title>dev.aprendiz - blog</title>
   <meta name="description"
     content="Página inicial do blog oaprendizdev, onde o usuário tem acesso a todos os artigos escritos.">
-  <meta property="og:image" content="/images/link-posts.png" />
+  <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+  meta property="og:site_name" content="O Aprendiz Dev" /> <!-- Nome do site -->
+  <meta property="og:site" content="https://www.oaprendizdev.com.br" /> <!-- Link do site -->
+  <meta property="og:title" content="Dicas e Recursos de Desenvolvimento em .NET" />
+  <!-- Título do post compartilhado -->
+  <meta property="og:description"
+    content="Encontre artigos, boas práticas e recursos sobre desenvolvimento em .NET e programação. Aprenda a criar aplicativos incríveis com as melhores práticas da indústria." />
+  <!-- Descrição do post compartilhado -->
+  <meta property="og:url" content="https://www.oaprendizdev.com.br/artigo-compartilhado" />
+  <!-- Link para onde o post deve direcionar -->
+  <meta property="og:image" content="/images/link-posts.png" /> /> <!-- URL da imagem em miniatura -->
+  <!-- Google Tag Manager -->
   <!-- Adicione os links para as fontes Montserrat e Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <!-- Adicione o link para o Bootstrap CSS -->
@@ -75,7 +86,8 @@
           <div class="card text-white bg-super-dark mb-3">
             <a href="/artigos/dapper-vs-entity-framework.html">
               <img class="card-img-top" src="/images/capa-blog-Dapper vs. Entity Framework.png"
-                alt="Dapper vs. Entity Framework: Comparando Duas Abordagens de Acesso a Dados em .NET" style="max-width: 100%;" height="auto">
+                alt="Dapper vs. Entity Framework: Comparando Duas Abordagens de Acesso a Dados em .NET"
+                style="max-width: 100%;" height="auto">
               <div class="card-body">
                 <h2 class="card-title">
                   Dapper vs. Entity Framework: Comparando Duas Abordagens de Acesso a Dados em .NET
@@ -105,7 +117,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-5 py-2">
           <div class="card text-white bg-super-dark mb-3">
-            <a href="/artigos/subindo-imagens-docker-sem-dockerfile-dotnet7.html.html">
+            <a href="/artigos/subindo-imagens-docker-sem-dockerfile-dotnet7.html">
               <img class="card-img-top" src="/images/capa-blog-docker-sem-dockerfile.png"
                 alt="Subindo imagens Docker sem um arquivo Dockerfile no .NET 7" style="max-width: 100%;" height="auto">
               <div class="card-body">
